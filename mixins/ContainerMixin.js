@@ -51,17 +51,17 @@ module.exports = {
       if (this.props.scrollOnTap === true && this._pageY + this._locationY > Dimensions.get('window').height - keyboardHeight - 44) {
         // @todo don't scroll lower than _contentSize
         if (scrollToTopOfWidget === true) {
-          this._scrollResponder.scrollTo({
-            y: this._pageY - this._locationY - 44 - 30,
-            x: 0,
-            animated: false,
-          });
+          this._scrollResponder.scrollTo(
+            this._pageY - this._locationY - 44 - 30, // y
+            0, // x
+            false // animated
+          );
         } else {
-          this._scrollResponder.scrollTo({
-            y: this._pageY + this._y - this._locationY - keyboardHeight + 44,
-            x: 0,
-            animated: false,
-          });
+          this._scrollResponder.scrollTo(
+            this._pageY + this._y - this._locationY - keyboardHeight + 44, // y
+            0, // x
+            false // animated
+          );
         }
       }
       // @todo don't change inset if external keyboard connected
